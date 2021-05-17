@@ -33,6 +33,7 @@ Note that the user will need to link the installation directory within their pyt
 
 This package provides an example python script (example.py) which call upon the library. 
 
+ALTERNATIVE:
 
 Currently, the Minesweeper game can be used without the GUI.  
 This terminal version is compiled with the following commands:

@@ -31,7 +31,7 @@ To compile the library, use the following commands:
 
 Note that the user will need to link the installation directory within their python code.
 
-This package provides and 
+This package provides an example python script (example.py) which call upon the library. 
 
 
 Currently, the Minesweeper game can be used without the GUI.  

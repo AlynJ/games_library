@@ -5,7 +5,7 @@ The purpose of this project is for the user to call upon the Minesweeper game an
 --------------------------------------------------------------------------------
 SYSTEM REQUIREMENTS:
 
-The system requirements for installation are:
+The system requirements for installation are
   -cmake 3.10
   -GCC 7.5.0
   -Boost 1.65.1
@@ -20,7 +20,7 @@ COMPILATION:
 
 This code has only been tested Ubuntu and uses cmake to generate the Makefiles.
 
-To compile the library, use the following commands:
+To compile the library, use the following commands
   
   cd /path-to-Minesweeper/.
   mkdir build
@@ -35,8 +35,8 @@ This package provides an example python script (example.py) which call upon the 
 
 ALTERNATIVE:
 
-Currently, the Minesweeper game can be used without the GUI.  
-This terminal version is compiled with the following commands:
+Currently, the Minesweeper game can be used without the GUI.
+This terminal version is compiled with the following commands 
   
   cd /path-to-Minesweeper/.
   g++ src/C++/minesweeper_game.cpp src/C++/game.cpp -o minesweeper -I./include/ 

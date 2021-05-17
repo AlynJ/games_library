@@ -40,9 +40,13 @@ To compile the library, use the following commands:
 
   make install
 
+------------
+
 Note that the user will need to link the installation directory within their python code.
 
 This package provides an example python script (example.py) which call upon the library. 
+
+------------
 
 ALTERNATIVE:
 

@@ -1,4 +1,4 @@
-# Minesweeper
+# Games Library
 
 This is a project of creating a Minesweeper game using C++ wrapped in Python. The C++ code forms a library and Python is used to generate the GUI for the game. 
 
@@ -9,17 +9,17 @@ The purpose of this project is for the user to call upon the Minesweeper game an
 
 The system requirements for installation are:
 
-  -cmake 3.10
+  - cmake 3.10
 
-  -GCC 7.5.0
+  - GCC 7.5.0
 
-  -Boost 1.65.1
+  - Boost 1.65.1
 
-  -Python 3.6.9
+  - Python 3.6.9
 
-  -numpy 1.19.4
+  - numpy 1.19.4
 
-  -tkinter
+  - tkinter
  
 This package has been tested using the aforementioned versions of the software and libraries.
 
@@ -30,17 +30,17 @@ This code has only been tested Ubuntu and uses cmake to generate the Makefiles.
 
 To compile the library, use the following commands:
 ```
-  cd /path-to-Minesweeper/.
+cd /path-to-Minesweeper/.
 
-  mkdir build
+mkdir build
 
-  cd build
+cd build
 
-  cmake .. -DCMAKE_CXX_COMPILER=g++ -DCMAKE_C_COMPILER=gcc -DCMAKE_INSTALL_PREFIX=/path-to-installation-directory/. 
+cmake .. -DCMAKE_CXX_COMPILER=g++ -DCMAKE_C_COMPILER=gcc -DCMAKE_INSTALL_PREFIX=/path-to-installation-directory/. 
 
-  make
+make
 
-  make install
+make install
 ```
 ------------
 
@@ -55,9 +55,9 @@ This package provides an example python script (example.py) which calls upon the
 Currently, the Minesweeper game can be used without the GUI.
 This terminal version is compiled with the following commands: 
 ```
-  cd /path-to-Minesweeper/.
+cd /path-to-Minesweeper/.
 
-  g++ src/C++/minesweeper_game.cpp src/C++/game.cpp -o minesweeper -I./include/ 
+g++ src/C++/minesweeper_game.cpp src/C++/game.cpp -o minesweeper -I./include/ 
 ```
 --------------------------------------------------------------------------------
 ## Future Developments
@@ -75,6 +75,6 @@ Potentially future games:
 --------------------------------------------------------------------------------
 ## To Do
 
-  Minesweeper:
+Minesweeper:
 
-    Have user defined grid and mines.
+- Have user defined grid and mines.

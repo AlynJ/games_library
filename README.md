@@ -1,9 +1,11 @@
+# Minesweeper
+
 This is a project of creating a Minesweeper game using C++ wrapped in Python. The C++ code forms a library and Python is used to generate the GUI for the game. 
 
 The purpose of this project is for the user to call upon the Minesweeper game and GUI within their own python script(s).
 
 --------------------------------------------------------------------------------
-SYSTEM REQUIREMENTS:
+## System Requirements
 
 The system requirements for installation are:
 
@@ -15,19 +17,19 @@ The system requirements for installation are:
 
   -Python 3.6.9
 
-    --numpy 1.19.4
+  -numpy 1.19.4
 
-    --tkinter
+  -tkinter
  
 This package has been tested using the aforementioned versions of the software and libraries.
 
 --------------------------------------------------------------------------------
-COMPILATION:
+## Compilation
 
 This code has only been tested Ubuntu and uses cmake to generate the Makefiles.
 
 To compile the library, use the following commands:
-  
+```
   cd /path-to-Minesweeper/.
 
   mkdir build
@@ -39,7 +41,7 @@ To compile the library, use the following commands:
   make
 
   make install
-
+```
 ------------
 
 Note that the user will need to link the installation directory within their python code.
@@ -48,17 +50,17 @@ This package provides an example python script (example.py) which calls upon the
 
 ------------
 
-ALTERNATIVE:
+### Alternative
 
 Currently, the Minesweeper game can be used without the GUI.
 This terminal version is compiled with the following commands: 
-  
+```
   cd /path-to-Minesweeper/.
 
   g++ src/C++/minesweeper_game.cpp src/C++/game.cpp -o minesweeper -I./include/ 
-
+```
 --------------------------------------------------------------------------------
-FUTURE DEVELOPMENTS:
+## Future Developments
 
 The aim of this project will be to include more games and expand this into a games library.
 
@@ -71,7 +73,7 @@ Potentially future games:
   Wordsearch
 
 --------------------------------------------------------------------------------
-TO DO:
+## To Do
 
   Minesweeper:
 

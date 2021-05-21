@@ -66,11 +66,11 @@ The aim of this project will be to include more games and expand this into a gam
 
 Potentially future games:
 
-  Sudoku
+- Sudoku
 
-  Connect-4
+- Connect-4
 
-  Wordsearch
+- Wordsearch
 
 --------------------------------------------------------------------------------
 ## To Do

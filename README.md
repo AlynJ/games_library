@@ -50,7 +50,7 @@ This package provides an example python script (example.py) which calls upon the
 
 ------------
 
-###Alternative
+### Alternative
 
 Currently, the Minesweeper game can be used without the GUI.
 This terminal version is compiled with the following commands: 

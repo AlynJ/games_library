@@ -14,18 +14,20 @@ int main() {
 // define the minesweeper object
 // This initialises variables and grid within the game
   Minesweeper minesweeper;
-  int flag, x, y;
+  int flag=0;
+  int x=-1;
+  int y=-1;
 
   minesweeper.disp_minefield(); 
 //the game loop
-  while(minesweeper.play==1){
+  while(minesweeper.get_play()==1){
 //user input
     std::cout << std::endl;
     flag=minesweeper.user_input(y, x); 
 //restart loop if a non-zero flag was returned	    
     if(flag!=0) {continue;}
 //check if coordinate has a mine
-    if(minesweeper.mfld[x][y]==9){
+    if(minesweeper.minefield_el(x,y)==9){
 //end the game if the mine was hit
       minesweeper.win_loss(); 
       minesweeper.replay(); 
@@ -34,11 +36,11 @@ int main() {
 //element has now been revealed
 //if element is zero, reveal all nearest neighbour zero elements (execpt for diagonals)    
       minesweeper.update(x,y);
-      std::cout << "There are " << minesweeper.safe << " number of safe points left." << std::endl;
+      std::cout << "There are " << minesweeper.get_safe() << " number of safe points left." << std::endl;
       std::cout << std::endl;
 //win condition
-      if (minesweeper.safe==0){
-	minesweeper.win=true;
+      if (minesweeper.get_safe()==0){
+	minesweeper.set_win(true);
         minesweeper.win_loss(); 
         minesweeper.replay(); 
       }
@@ -48,7 +50,7 @@ int main() {
       }
     }
 //play again condition    
-    if(minesweeper.again){ 
+    if(minesweeper.get_again()){ 
       minesweeper.mine_init(); 
       minesweeper.disp_minefield(); 
     }

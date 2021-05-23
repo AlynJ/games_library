@@ -15,7 +15,7 @@ class GameDisplay(Frame):
     self.parent = parent
     Frame.__init__(self, parent)
     self.lose=False
-    self.flags=np.zeros([self.game.imx, self.game.jmx], np.int)
+    self.flags=np.zeros([self.game.get_imx(), self.game.get_jmx()], np.int)
 
     self.MARGIN = 20  # Pixels around the board
     self.SIDE = 50  # Width of every board cell.
@@ -74,9 +74,9 @@ class GameDisplay(Frame):
     """
     self.canvas.delete("numbers")
     #print(self.lose)
-    for i in range(0,self.game.imx):
-      for j in range(0,self.game.jmx):
-        display = self.game.dsp[i][j]
+    for i in range(0,self.game.get_imx()):
+      for j in range(0,self.game.get_jmx()):
+        display = self.game.display_el(i,j)
         answer = ""  
         color = "blue" 
         if(self.flags[i,j] == 1): 
@@ -92,19 +92,19 @@ class GameDisplay(Frame):
         y1=y+self.SIDE / 2
         if(self.lose):
           color = "black" 
-          if(self.game.mfld[i][j] == 9):
+          if(self.game.minefield_el(i,j) == 9):
             answer = "*"  
             self.canvas.create_rectangle( x0, y0, x1, y1,
             tags="numbers", fill="orange red", outline="black")
           else:
-            answer = self.game.mfld[i][j]  
+            answer = self.game.minefield_el(i,j)  
         elif((self.flags[i,j] == 0) and (display != 0)):
-          answer = self.game.mfld[i][j] 
+          answer = self.game.minefield_el(i,j) 
         else:
           self.canvas.create_rectangle( x0, y0, x1, y1,
           tags="numbers", fill="light gray", outline="black")
             
-        #original = self.game.mfld[i][j]
+        #original = self.game.minefield_el(i,j)
         #color = "black" if answer == original else "sea green"
         self.canvas.create_text(x 
                                ,y 
@@ -134,7 +134,7 @@ class GameDisplay(Frame):
     self.canvas.delete("numbers")
     self.canvas.delete("victory")
     del self.flags
-    self.flags=np.zeros([self.game.imx, self.game.jmx], np.int)
+    self.flags=np.zeros([self.game.get_imx(), self.game.get_jmx()], np.int)
     self.__draw_puzzle()
 
   def __cell_clicked(self, event):
@@ -147,13 +147,13 @@ class GameDisplay(Frame):
       if (self.flags[row,col]==1):
         return
       # if cell was selected already - deselect it
-      elif (self.game.dsp[row][col] == 0):
+      elif (self.game.display_el(row,col) == 0):
         self.row, self.col = row, col
         self.game.update(row,col)
-        if(self.game.mfld[row][col] == 9):
+        if(self.game.minefield_el(row,col) == 9):
           self.lose=True 
         self.__draw_puzzle()
-        if (self.game.safe == 0):
+        if (self.game.get_safe() == 0):
           self.__draw_victory()
     else:
       self.row, self.col = -1, -1
@@ -168,26 +168,26 @@ class GameDisplay(Frame):
       nflags=0
       for i in range(row-1,row+2):
         for j in range(col-1,col+2):
-          if ((i<0) or (j<0) or (i>=self.game.imx) or (j>=self.game.jmx)): 
+          if ((i<0) or (j<0) or (i>=self.game.get_imx()) or (j>=self.game.get_jmx())): 
             continue
           if (self.flags[i,j]==1):
             nflags+=1
 
-      if(nflags>=self.game.mfld[row][col]):
+      if(nflags>=self.game.minefield_el(row,col)):
         for i in range(row-1,row+2):
           for j in range(col-1,col+2):
-            if ((i<0) or (j<0) or (i>=self.game.imx) or (j>=self.game.jmx)): 
+            if ((i<0) or (j<0) or (i>=self.game.get_imx()) or (j>=self.game.get_jmx())): 
               continue
       # if cell was selected already - deselect it
-            if((self.game.dsp[i][j] == 0) and (self.flags[i,j]==0)):
+            if((self.game.display_el(i,j) == 0) and (self.flags[i,j]==0)):
               self.row, self.col = i, j
               self.game.update(i,j)
-              if(self.game.mfld[i][j] == 9):
+              if(self.game.minefield_el(i,j) == 9):
                 self.lose=True
                 self.__draw_puzzle()
                 return
               self.__draw_puzzle()
-              if (self.game.safe == 0):
+              if (self.game.get_safe() == 0):
                 self.__draw_victory()
                 return
     else:

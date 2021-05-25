@@ -75,6 +75,5 @@ Potentially future games:
 --------------------------------------------------------------------------------
 ## To Do:
 
-Minesweeper:
+Improve the GUI.
 
-- Have user defined grid and mines.

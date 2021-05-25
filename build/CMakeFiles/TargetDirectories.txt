@@ -1,7 +1,0 @@
-/home/aj12959/Documents/coding_practice/c++/minesweeper/build/CMakeFiles/install/strip.dir
-/home/aj12959/Documents/coding_practice/c++/minesweeper/build/CMakeFiles/edit_cache.dir
-/home/aj12959/Documents/coding_practice/c++/minesweeper/build/CMakeFiles/gamewrapper.dir
-/home/aj12959/Documents/coding_practice/c++/minesweeper/build/CMakeFiles/rebuild_cache.dir
-/home/aj12959/Documents/coding_practice/c++/minesweeper/build/CMakeFiles/list_install_components.dir
-/home/aj12959/Documents/coding_practice/c++/minesweeper/build/CMakeFiles/install/local.dir
-/home/aj12959/Documents/coding_practice/c++/minesweeper/build/CMakeFiles/install.dir

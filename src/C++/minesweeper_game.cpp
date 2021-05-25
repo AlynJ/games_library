@@ -18,6 +18,7 @@ int main() {
   int x=-1;
   int y=-1;
 
+  minesweeper.set_int(10,10,12);
   minesweeper.disp_minefield(); 
 //the game loop
   while(minesweeper.get_play()==1){

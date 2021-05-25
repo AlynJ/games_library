@@ -16,11 +16,28 @@ Minesweeper::Minesweeper() {
 
 void Minesweeper::set_int(const int imx, const int jmx, const int N) {
 //set the variables for the grid size and number of mines
+
+//check input variables are valid
+  if((imx < 1) and (jmx < 1)){
+    std::cout << "Invalid grid size." << std::endl;
+    std::cout << "Keeping previously defined variables." << std::endl;
+    return;
+  }    
+  if(imx*jmx-N < 1){
+    std::cout << "Invalid input mines for given grid size." << std::endl;
+    std::cout << "Keeping previously defined variables." << std::endl;
+    return;	  
+  }
+// set variables	
   _imx=imx;
   _jmx=jmx;
   _N=N;
+// initialise other variables
+  _mfld.clear(); //remove all elements in vector
   _mfld.resize(_imx,std::vector<int>(_jmx,0)); //initiates the mine field to zero
+  _dsp.clear(); //reove all elements in vector
   _dsp.resize(_imx,std::vector<int>(_jmx,0)); //initiates the displayed mine field to zero
+  mine_init();//initialise the game
 //EOF
 }
 

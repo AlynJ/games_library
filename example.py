@@ -7,6 +7,10 @@ from tkinter import Tk
 #initiate and display the minefield
 ms = gw.Minesweeper()
 
+#set input parameters
+ms.set_int(10,20,10)
+ms.mine_init()
+
 #initiate the game window
 root = Tk()
 GD = gm.GameDisplay(root,ms)

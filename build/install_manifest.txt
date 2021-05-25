@@ -1,0 +1,2 @@
+/home/aj12959/Documents/coding_practice/c++/minesweeper/app/gamewrapper.so
+/home/aj12959/Documents/coding_practice/c++/minesweeper/app/gamedisp.py
